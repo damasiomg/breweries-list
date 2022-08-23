@@ -1,0 +1,54 @@
+$colors: (
+    'footer': #fafafa,
+    'black': #000,
+    'white': #ffffff,
+    'micro': #30d1b2,
+    'regional': #3273dc,
+    'brewpub': #fbdd57,
+    'brewpub-font': #9d8a33
+);
+
+@each $key, $color in $colors {
+    .theme-#{$key}{
+        background: $color;
+    }
+}
+
+.global-styles {
+
+    &__body{
+        background: map-get($colors, 'white');
+        margin: 0;
+    }
+
+    &__header{
+        background: map-get($colors, 'black');
+        color: map-get($colors, 'white');
+        padding: 15px 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        line-height: 10px;
+        margin-bottom: 10px;
+    }
+    
+    &__footer{
+        padding: 40px 120px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background: map-get($colors, 'footer');
+    }
+    
+    @media screen and (max-width: 767px) {
+        &__header{
+            align-items: center;
+        }
+        
+        &__description{
+            line-height: 18px;
+            text-align: center;
+        }
+    }
+
+}

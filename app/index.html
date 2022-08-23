@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html ng-app="breweriesList">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Breweries List</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="stylesheet" href="/assets/css/app.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="global-styles__body">
+        <div class="global-styles__header">
+            <div class="global-styles__description">
+                <h1>Breweries</h1>
+                <p>A breweries list by Open Brewery DB</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <ng-view class="view"></ng-view>
+        </div>
+        <footer class="global-styles__footer">
+            <label>Breweries List</label>
+        </footer>
+        <script src="/assets/js/deps.min.js"></script>
+        <script src="/assets/js/app.min.js"></script>
+    </body>
+</html>
