@@ -13,9 +13,11 @@ angular
     $onInit(){
         this.page = 1;
         this.breweryType = '';
+        this.isLoading = true;
         this.BrewerieaListService._getBreweriesByType({ page: this.page })
             .then(data => {
                 this.breweryList = data;
+                this.isLoading = false;
             });
 
         this.$rootScope.$on('update-brewery-list', (e, data) => {
@@ -36,9 +38,11 @@ angular
     }
 
     updateBreweryList(params){
+        this.isLoading = true;
         this.BrewerieaListService._getBreweriesByType(params)
             .then(data => {
                 this.breweryList = data;
+                this.isLoading = false;
             });
     }
 

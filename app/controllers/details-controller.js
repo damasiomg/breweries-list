@@ -9,9 +9,11 @@ angular
     }
 
     $onInit(){
+        this.isLoading = true;
         this.BrewerieaListService._getBreweriesById(this.$routeParams.id)
             .then(data => {
                 this.brewery = data;
+                this.isLoading = false;
             });
     }
 

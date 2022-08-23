@@ -2,7 +2,9 @@
 
     <type-filter></type-filter>
 
-    <div class="home__list">
+    <loading ng-if="vm.isLoading"></loading>
+
+    <div ng-if="!vm.isLoading" class="home__list">
         <brewery-card
             ng-repeat="brewery in vm.breweryList track by brewery.id" 
             brewery="brewery"

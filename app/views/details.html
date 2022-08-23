@@ -1,9 +1,12 @@
 <div class="details" ng-controller="DetailsController as vm">
+
     <div class="details__menu" ng-click="vm.onClick();">
         <span class="details__icon"></span><label>Back</label>
     </div>
 
-    <brewery-details brewery="vm.brewery"></brewery-details>
+    <loading ng-if="vm.isLoading"></loading>
+
+    <brewery-details ng-if="!vm.isLoading" brewery="vm.brewery"></brewery-details>
 </div>
 
 

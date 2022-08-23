@@ -1,0 +1,11 @@
+@import '../../colors.scss';
+
+.loading{
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    border-radius: 3px 3px;
+
+    @media screen and (max-width: 1024px) {}
+}
+
