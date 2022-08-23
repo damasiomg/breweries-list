@@ -1,5 +1,6 @@
 angular.module('breweriesList', [
-  'ngRoute'
+  'ngRoute',
+  'ngAria'
 ])
 .config(['$routeProvider', 
   function($routeProvider){
@@ -12,3 +13,17 @@ angular.module('breweriesList', [
     });
   }
 ])
+.config(['$ariaProvider',
+  function($ariaProvider) {
+    $ariaProvider.config({
+      ariaHidden: false,
+      ariaChecked: true,
+      ariaDisabled: true,
+      ariaRequired: true,
+      ariaInvalid: true,
+      ariaMultiline: true,
+      ariaValue: true,
+      tabindex: true
+    })
+  }
+]);

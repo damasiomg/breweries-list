@@ -1,9 +1,42 @@
+@import '../../colors.scss';
+
 .brewery-card{
     box-shadow: rgba(0, 0, 0, .10) 0 10px 15px -3px, rgba(0, 0, 0, .5) 0 4px 6px -2px;
-    padding: 15px 15px 5px 15px;
-    min-width: 170px;
-    height: 180px;
+    padding: 0;
+    width: 230px;
+    height: 210px;
     border-radius: 5px;
+
+    &__inner{
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+    }
+    
+    &__title{
+        font: 400 21px/1 'Merriweather', serif;
+    }
+
+    label{
+        font: 300 11px/1.5 'Merriweather', serif;
+    }
+
+    &__footer{
+        border-top: 1px solid map-get($colors, 'light-gray');
+        padding: 5px 10px 0 15px;
+    }
+
+    &__type{
+        border-radius: 3px;
+        background: map-get($colors, 'black');
+        color: map-get($colors, 'white');
+        padding: 1px 5px;
+        font-size: 10px;
+    }
+
+    @import '../../global-styles.scss';
+
+    @media screen and (max-width: 767px) {}
 }
 
-@media screen and (max-width: 767px) {}

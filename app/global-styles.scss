@@ -1,12 +1,4 @@
-$colors: (
-    'footer': #fafafa,
-    'black': #000,
-    'white': #ffffff,
-    'micro': #30d1b2,
-    'regional': #3273dc,
-    'brewpub': #fbdd57,
-    'brewpub-font': #9d8a33
-);
+@import './colors.scss';
 
 @each $key, $color in $colors {
     .theme-#{$key}{
@@ -28,8 +20,8 @@ $colors: (
         display: flex;
         flex-direction: column;
         justify-content: start;
-        line-height: 10px;
         margin-bottom: 10px;
+        font: 300 12px/.5 'Merriweather', serif;
     }
     
     &__footer{
