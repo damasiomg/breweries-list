@@ -6,8 +6,11 @@ This's a Breweries List project. This was built with AgularJS and Sass.
 ## Main concepts:
 Services, directives, filters and components.
 
-## Sample view:
+## Sample view: 
 ![](breweries-list.png)
+
+## Live Demo:
+* https://papaya-tulumba-1aff96.netlify.app
 
 ## Requirements:
 1. `node 8.x or 10.x`
