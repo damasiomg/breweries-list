@@ -6,7 +6,7 @@ angular
     },
     controllerAs: 'vm',
     template: `
-        <div class="brewery-card" ng-click="vm.onClick();">
+        <div class="brewery-card" ng-click="vm.onClick(vm.brewery.id);">
             <div class="brewery-card__inner">
                 <p class="brewery-card__title">{{vm.brewery.name}}</p>
                 <label>{{vm.brewery.street}}</label>
@@ -29,8 +29,8 @@ angular
             this.$scope = $scope;
         }
 
-        onClick(){
-            console.log('Here');
+        onClick(id){  
+            window.location.href=`/#!/brewery-details/${id}`;
         }
     }]
 });

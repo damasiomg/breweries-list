@@ -1,34 +1,45 @@
 angular
 .module('breweriesList')
-.controller('HomeController', ['$routeParams','$scope', '$rootScope', class HomeController {
+.controller('HomeController', ['$routeParams','$scope', '$rootScope', 'BrewerieaListService' , class HomeController {
 
-    constructor($routeParams, $scope, $rootScope){
+    constructor($routeParams, $scope, $rootScope, BrewerieaListService){
         'ngInject',
         this.$routeParams = $routeParams;
         this.$scope = $scope;
         this.$rootScope = $rootScope;
+        this.BrewerieaListService = BrewerieaListService;
     }
 
     $onInit(){
         this.page = 1;
-        this.brewery = {
-            "id": "13-below-brewery-cincinnati",
-            "name": "13 Below Brewery",
-            "brewery_type": "micro",
-            "street": "7391 Forbes Rd",
-            "city": "Cincinnati",
-            "state": "Ohio",
-            "county_province": null,
-            "postal_code": "45233-1013",
-            "country": "United States",
-            "longitude": "-84.70634815",
-            "latitude": "39.12639764",
-            "phone": "5139750613",
-            "website_url": "http://www.13belowbrewery.com",
-            "updated_at": "2022-08-20T02:56:08.975Z",
-            "created_at": "2022-08-20T02:56:08.975Z"
-        }
+        this.breweryType = '';
+        this.BrewerieaListService._getBreweriesByType({ page: this.page })
+            .then(data => {
+                this.breweryList = data;
+            });
 
+        this.$rootScope.$on('update-brewery-list', (e, data) => {
+            
+            if(this.breweryType !== data.type){
+                this.page = 1;
+            }
+            
+            let params = {page: data.page || this.page };
+            this.breweryType = data.type;
+
+
+            if(!!this.breweryType){
+                params.by_type = data.type;
+            }
+            this.updateBreweryList(params);
+        });
+    }
+
+    updateBreweryList(params){
+        this.BrewerieaListService._getBreweriesByType(params)
+            .then(data => {
+                this.breweryList = data;
+            });
     }
 
 }]);

@@ -14,11 +14,11 @@ angular
             </select>
         </div>
     `,
-    controller: ['$scope', class BreweryCardController {
+    controller: ['$rootScope', class BreweryCardController {
 
-        constructor($scope){
+        constructor($rootScope){
             'ngInject'
-            this.$scope = $scope;
+            this.$rootScope = $rootScope;
         }
 
         $onInit(){
@@ -31,13 +31,12 @@ angular
               'planning',
               'bar',
               'contract',
-              'proprietor',
               'closed'  
             ];
         }
 
         onChange(){
-            console.log('select type', this.breweryType);
+            this.$rootScope.$broadcast('update-brewery-list', { type: this.breweryType });
         }
     }]
 });

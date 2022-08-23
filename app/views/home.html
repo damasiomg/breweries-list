@@ -3,8 +3,11 @@
     <type-filter></type-filter>
 
     <div class="home__list">
-        <brewery-card brewery="vm.brewery"></brewery-card>
+        <brewery-card
+            ng-repeat="brewery in vm.breweryList track by brewery.id" 
+            brewery="brewery"
+        ></brewery-card>
     </div>
 
-    <pagination-list page="vm.page"></pagination-list>
+    <pagination-list page="vm.page" type="vm.breweryType"></pagination-list>
 </div>

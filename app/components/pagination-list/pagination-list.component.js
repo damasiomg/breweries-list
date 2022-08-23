@@ -2,7 +2,8 @@ angular
 .module('breweriesList')
 .component('paginationList', {
     bindings: {
-       page: '=', 
+       page: '=',
+       type: '<',
     },
     controllerAs: 'vm',
     template: `
@@ -17,11 +18,11 @@ angular
             </div>
         </div>
     `,
-    controller: ['$scope', class PaginationListController {
+    controller: ['$rootScope', class PaginationListController {
 
-        constructor($scope){
+        constructor($rootScope){
             'ngInject'
-            this.$scope = $scope;
+            this.$rootScope = $rootScope;
         }
 
         $onInit(){
@@ -30,6 +31,8 @@ angular
 
         onClick(value){
             this.page = value;
+            this.$rootScope.$broadcast('update-brewery-list', { page: value, type: this.type });
+
         }
 
     }]
