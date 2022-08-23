@@ -10,7 +10,7 @@ angular
     }
 
     $onInit(){
-
+        this.page = 1;
         this.brewery = {
             "id": "13-below-brewery-cincinnati",
             "name": "13 Below Brewery",
