@@ -9,7 +9,7 @@ angular.module('breweriesList', [
       templateUrl: 'views/home.html',
     })
     .when('/brewery-details/:id', {
-      templateUrl: 'views/brewery-details.html',
+      templateUrl: 'views/details.html',
     });
   }
 ])

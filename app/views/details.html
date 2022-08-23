@@ -1,5 +1,9 @@
 <div class="details" ng-controller="DetailsController as vm">
-    Details
+    <div class="details__menu" ng-click="vm.onClick();">
+        <span class="details__icon"></span><label>Back</label>
+    </div>
+
+    <brewery-details brewery="vm.brewery"></brewery-details>
 </div>
 
 

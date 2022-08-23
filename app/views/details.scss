@@ -1,5 +1,25 @@
 .details{
-    @media screen and (max-width: 767px) { }
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    max-width: 1000px;
+    padding: 15px 120px;
+    font: 300 12px/1 'Merriweather', serif;
+
+    &__menu{
+        cursor: pointer;
+        width: fit-content;
+    }
+    
+    &__icon:before {
+        content: '\003C';
+        margin-right: 5px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        align-items: center;
+        padding: 15px 30px;    
+    }
 }
 
 
