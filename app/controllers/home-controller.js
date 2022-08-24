@@ -45,5 +45,4 @@ angular
                 this.isLoading = false;
             });
     }
-
 }]);

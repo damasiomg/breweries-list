@@ -8,11 +8,5 @@ angular
             <img width="40" src="/assets/preloader.svg" alt="Loading..."/>
         </div>
     `,
-    controller: ['$scope', class LoadingController {
-
-        constructor($scope){
-            'ngInject'
-            this.$scope = $scope;
-        }
-    }]
+    controller: class LoadingController {}
 });

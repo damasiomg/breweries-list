@@ -14,19 +14,10 @@ angular
             <span>State: {{vm.brewery.state}}</span>
             <span>Postal code: {{vm.brewery.postal_code}}</span>
             <span>Country: {{vm.brewery.country}}</span>
-            <span>Website: <a ng-href="{{vm.brewery.website_url}}" target="_blank">{{vm.brewery.website_url}}</a></span>
-            <span>Phone: {{vm.brewery.phone}}</span>
+            <span ng-if="vm.brewery.website_url">Website: <a ng-href="{{vm.brewery.website_url}}" target="_blank">{{vm.brewery.website_url}}</a></span>
+            <span ng-if="vm.brewery.phone">Phone: {{vm.brewery.phone}}</span>
             <span ng-if="vm.brewery.latitude">Open in maps: <a ng-href="http://maps.google.com/maps?q={{vm.brewery.latitude}},{{vm.brewery.longitude}}" target="_blank">{{vm.brewery.latitude}},{{vm.brewery.longitude}}</a></span>
         </div>
     `,
-    controller: ['$scope', class BreweryDetailsController {
-
-        constructor($scope){
-            'ngInject'
-            this.$scope = $scope;
-        }
-
-        $onInit(){
-        }
-    }]
+    controller: class BreweryDetailsController {}
 });

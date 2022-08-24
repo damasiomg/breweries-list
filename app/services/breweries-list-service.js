@@ -6,7 +6,6 @@ angular
         this.$http = $http;
         this.$q = $q;
         this.EXTERNAL_LINK_API = 'https://api.openbrewerydb.org/breweries';
-        this.itensByPage = 8;
     }
 
     _getBreweriesByType(params){

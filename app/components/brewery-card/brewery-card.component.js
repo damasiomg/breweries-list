@@ -22,15 +22,9 @@ angular
 
         </div>
     `,
-    controller: ['$scope', class BreweryCardController {
-
-        constructor($scope){
-            'ngInject'
-            this.$scope = $scope;
-        }
-
+    controller: class BreweryCardController {
         onClick(id){  
             window.location.href=`/#!/brewery-details/${id}`;
         }
-    }]
+    }
 });
