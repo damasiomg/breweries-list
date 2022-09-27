@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const gulpSass = require('gulp-sass');
-const nodeSass = require('node-sass');
+const nodeSass = require('sass');
 const uglify = require('gulp-uglify');
 const uglifycss = require('gulp-uglifycss');
 const concat = require('gulp-concat');
